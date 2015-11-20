@@ -1,0 +1,20 @@
+add somethings for C4
+# -*- coding: cp936 -*-
+
+from django.db import models
+# Create your models here.
+
+class Book(models.Model):
+    ISBN = models.IntegerField(max_length=20)
+    Title = models.CharField(max_length=100)
+    AuthorID = models.IntegerFiled(max_length=30)
+    Publisher = models.CharFiled(max_length=20) 
+    PublishDate = models.DateTimeFiled()
+    Price = models.IntegerFiled(max_length=10)
+
+class Author(models.Model):
+    AuthorID = models.IntegerFiled(max_length=50)
+    Name = models.CharField(max_length=20)
+    Age = models.IntegerField(max_length=5)
+    Country = models.CharFiled(max_length=30)
+    

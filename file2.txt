@@ -1,0 +1,31 @@
+# -*- coding: cp936 -*- 
+from django.conf.urls import patterns, include, url
+from django.contrib import admin
+
+from lab3_app.views import hello,myhtml,cc,show,add,query,delByID,showid
+
+urlpatterns = patterns('',
+    # Examples:
+    # url(r'^$', 'Django项目.views.home', name='home'),
+    # url(r'^blog/', include('blog.urls')),
+
+    url(r'^admin/', include(admin.site.urls)),
+    #基于hellword的绑定
+    url(r'^lab3_app.views.hello/$',hello),
+
+    url(r'^lab3_app.views.myhtml/$',myhtml),
+    url(r'^lab3_app.views.cc/$',cc),
+    #url映射到view层，并获取展现数据
+    url(r'^lab3_app.views.show$',show),
+    #添加数据映射
+    url(r'^lab3_app.views.add$',add),
+    #查询所有数据的映射
+    url(r'^lab3_app.views.query$',query),
+    #删除用户根据id
+    url(r'lab3_app.views.delByID$',delByID),
+    #更新的方法，根据id
+    url(r'lab3_app.views.showid$',showid),
+
+
+)
+
